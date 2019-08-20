@@ -12,3 +12,8 @@ interface KotlinDaggerComponent {
 interface JavaDaggerComponent {
     fun inject(injectionTest: InjectionTest.JavaDaggerTest)
 }
+
+@Component
+interface KotlinConstructorInjectionDaggerComponent {
+    fun inject(injectionTest: InjectionTest.KotlinConstructorDaggerTest)
+}
