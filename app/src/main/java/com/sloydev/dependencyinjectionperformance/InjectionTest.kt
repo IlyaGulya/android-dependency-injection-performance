@@ -54,7 +54,7 @@ class InjectionTest : KoinComponent {
         log("${Build.BRAND} ${Build.DEVICE} with Android ${Build.VERSION.RELEASE}")
         log(" ")
         log("Library | Setup Kotlin | Setup Java | Setup Kotlin Constructor | Inject Kotlin | Inject Java | Inject Kotlin Constructor")
-        log("--- | ---:| ---:| ---:| ---: | ---:")
+        log("--- | ---:| ---:| ---:| ---: | ---: | ---:")
         results.forEach { result ->
             val setups = Variant.values().map { result.getOrNull(it)?.startupTime }
             val injections = Variant.values().map { result.getOrNull(it)?.injectionTime }
