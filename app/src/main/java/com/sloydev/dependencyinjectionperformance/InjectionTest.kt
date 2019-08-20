@@ -10,6 +10,7 @@ import com.sloydev.dependencyinjectionperformance.dagger2.JavaDaggerComponent
 import com.sloydev.dependencyinjectionperformance.dagger2.KotlinDaggerComponent
 import com.sloydev.dependencyinjectionperformance.katana.katanaJavaModule
 import com.sloydev.dependencyinjectionperformance.katana.katanaKotlinModule
+import com.sloydev.dependencyinjectionperformance.koin.koinConstructorModule
 import com.sloydev.dependencyinjectionperformance.koin.koinJavaModule
 import com.sloydev.dependencyinjectionperformance.koin.koinKotlinModule
 import org.kodein.di.Kodein
@@ -85,6 +86,15 @@ class InjectionTest : KoinComponent {
                 setup = {
                     startKoin {
                         modules(koinJavaModule)
+                    }
+                },
+                test = { get<FibonacciJava.Fib8>() },
+                teardown = { stopKoin() }
+            ),
+            Variant.KOTLIN_CONSTRUCTOR to runTest(
+                setup = {
+                    startKoin {
+                        modules(koinConstructorModule)
                     }
                 },
                 test = { get<FibonacciJava.Fib8>() },

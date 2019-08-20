@@ -1,7 +1,7 @@
 package com.sloydev.dependencyinjectionperformance
 
 import android.util.Log
-import java.util.*
+import java.util.Locale
 import kotlin.system.measureNanoTime
 
 typealias Milliseconds = Double
@@ -16,7 +16,7 @@ data class TestResult(
 )
 
 enum class Variant {
-    KOTLIN, JAVA
+    KOTLIN, JAVA, KOTLIN_CONSTRUCTOR
 }
 
 fun Milliseconds?.format() = String.format(Locale.ENGLISH, "%.2f ms", this)
